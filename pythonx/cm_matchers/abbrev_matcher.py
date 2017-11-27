@@ -98,7 +98,7 @@ def make_regex(pattern, escape=False):
         elif ch.isdigit():
             ch_res = (re_opt(r'.{asterisk}[^0-9]') + '{match_start}{ch}')
         else:
-            ch_res = r'.{asterisk}\{match_start}{ch}'
+            ch_res = r'.{asterisk}{match_start}{ch}'
         res += ch_res.format(**locals())
     if escape:
         res = res.replace('\\', '\\\\')
